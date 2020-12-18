@@ -2,12 +2,11 @@ package com.miqdad71.arkademyandroidweek6.fragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.textservice.TextInfo
 import android.widget.Button
 import android.widget.TextView
 import com.miqdad71.arkademyandroidweek6.R
 
-class SimpleFragmentActivity : AppCompatActivity(), FragmentB.BListener {
+class SimpleFragmentActivity : AppCompatActivity() {
 
     private lateinit var textInfo: TextView
 
@@ -38,4 +37,6 @@ class SimpleFragmentActivity : AppCompatActivity(), FragmentB.BListener {
                 supportFragmentManager.beginTransaction().replace(R.id.fl_container, bFragment).commit()
             }
     }
+
+
 }
