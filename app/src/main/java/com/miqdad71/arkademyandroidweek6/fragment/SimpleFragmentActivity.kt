@@ -10,11 +10,15 @@ class SimpleFragmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple_fragment)
 
-        var btnSwitchA = findViewById<Button>(R.id.btn_switch_a)
-        var btnSwitchB = findViewById<Button>(R.id.btn_switch_b)
+        val btnSwitchA = findViewById<Button>(R.id.btn_switch_a)
+        val btnSwitchB = findViewById<Button>(R.id.btn_switch_b)
 
+        //Activity to Fragment
         btnSwitchA.setOnClickListener {
             val aFragment = FragmentA()
+            val bundle = Bundle()
+            bundle.putString(FragmentA.EXTRA_INFO, "Argument A")
+            aFragment.arguments = bundle
             supportFragmentManager.beginTransaction().replace(R.id.fl_container, aFragment).commit()
         }
 
